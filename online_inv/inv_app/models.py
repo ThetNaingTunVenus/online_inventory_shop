@@ -16,6 +16,5 @@ class Product(models.Model):
     stock_qty = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
-    def __str__(self):
-        return self.name
+    
 

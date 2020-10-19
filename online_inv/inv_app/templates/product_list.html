@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Product Lists{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h2>Products Table</h2>
+
+
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Product_Name</th>
+                        <th scope="col">Purchase_Price</th>
+                        <th scope="col">Sale_Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Functions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in products %}
+
+                    <tr>
+                        <th scope="row">{{ product.id }}</th>
+                        <td>{{ product.category_name }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.purchase_price }}</td>
+                        <td>{{ product.sale_price }}</td>
+                        <td>{{ product.stock_qty }}</td>
+                        <td>
+                            <form action="{% url 'delete_product' product.id %}" method="POST" class="d-inline">
+                               {% csrf_token %}
+                                <input type="submit"  class="btn btn-sm btn-info" value="Edit">
+                            </form>
+                            <form action="{% url 'delete_product' product.id %}" method="POST" class="d-inline">
+                               {% csrf_token %}
+                                <input type="submit"  class="btn btn-sm btn-danger" value="Delete">
+                            </form>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
