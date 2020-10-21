@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-{% block title %}create new product{% endblock title %}
+{% block title %}edit_product{% endblock title %}
 
 {% block content %}
 
 <div class="col-md-8 mx-auto">
-    <h2>Create New Product</h2>
+    <h2>Edit Product</h2>
     <div class="card">
         <div class="card-body">
 
-            <form action="{% url 'create_product' %}" method="POST" class="d-inline">
+            <form action="" method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <input type="submit" value="Create Product" class="btn btn-primary">

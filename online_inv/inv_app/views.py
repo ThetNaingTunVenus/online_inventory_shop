@@ -6,7 +6,8 @@ from .models import Product
 # Create your views here.
 def index(request):
     fm = CreateProduct(request.POST or None)
-    context = {"form": fm}
+    products = Product.objects.all()
+    context = {"form": fm, "products": products}
     return render(request, 'index.html', context)
 
 
@@ -42,3 +43,16 @@ def delete_product(request,id):
         pi = Product.objects.get(pk=id)
         pi.delete()
         return redirect('product_list')
+
+
+def edit_product(request,id):
+    if request.method=='POST':
+        pi = Product.objects.get(pk=id)
+        fm = CreateProduct(request.POST, instance=pi)
+        if fm.is_valid():
+            fm.save()
+            return redirect('product_list')
+    else:
+        pi = Product.objects.get(pk=id)
+        fm = CreateProduct(instance=pi)
+    return render(request, 'edit_product.html', {"form":fm})

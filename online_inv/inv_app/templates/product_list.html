@@ -33,7 +33,7 @@
                         <td>{{ product.sale_price }}</td>
                         <td>{{ product.stock_qty }}</td>
                         <td>
-                            <form action="{% url 'delete_product' product.id %}" method="POST" class="d-inline">
+                            <form action="{% url 'edit_product' product.id %}" method="POST" class="d-inline">
                                {% csrf_token %}
                                 <input type="submit"  class="btn btn-sm btn-info" value="Edit">
                             </form>

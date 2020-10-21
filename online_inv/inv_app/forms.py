@@ -6,7 +6,8 @@ class CreateProduct(forms.ModelForm):
         model = Product
         fields = ['category_name','name', 'purchase_price','sale_price']
         widgets = {
-            'name': forms.TextInput(attrs={'class':'form-control'}),
+            # 'category_name': forms.ChoiceField(),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
             'purchase_price': forms.TextInput(attrs={'class': 'form-control'}),
             'sale_price': forms.TextInput(attrs={'class': 'form-control'}),
 

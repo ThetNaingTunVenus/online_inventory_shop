@@ -4,7 +4,87 @@
 
 {% block content %}
 
-<h1>Hello Indexx</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    Cras justo odio
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+</div>
+        </div>
+        <div class="col-lg-6">
+            <table class="table table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+
+                        <th scope="col">Product_Name</th>
+
+                        <th scope="col">Sale_Price</th>
+
+                        <th scope="col">Functions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in products %}
+
+                    <tr>
+                        <th scope="row">{{ product.id }}</th>
+
+                        <td>{{ product.name }}</td>
+
+                        <td>{{ product.sale_price }}</td>
+
+                        <td>
+                            <form action="" method="POST" class="d-inline">
+                               {% csrf_token %}
+                                <input type="submit"  class="btn btn-sm btn-info" value="Cart">
+                            </form>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+        </div>
+        <div class="col-lg-3">
+            <table class="table table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+
+
+                        <th scope="col">Product_Name</th>
+
+                        <th scope="col">Sale_Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+
+                    <tr>
+                        <th scope="row">1</th>
+
+                        <td>2</td>
+
+                        <td>3</td>
+                        <td>5</td>
+
+                    </tr>
+
+
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</div>
 
 
 
