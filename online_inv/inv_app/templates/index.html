@@ -6,7 +6,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-3">
             <div class="list-group">
   <a href="#" class="list-group-item list-group-item-action active">
     Cras justo odio
@@ -17,7 +17,7 @@
   <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
 </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-9">
             <table class="table table-hover">
                     <thead class="thead-dark">
                     <tr>
@@ -26,6 +26,7 @@
                         <th scope="col">Product_Name</th>
 
                         <th scope="col">Sale_Price</th>
+
 
                         <th scope="col">Functions</th>
                     </tr>
@@ -40,10 +41,12 @@
 
                         <td>{{ product.sale_price }}</td>
 
+
                         <td>
-                            <form action="" method="POST" class="d-inline">
+                            <form action="" method="" class="d-inline">
                                {% csrf_token %}
-                                <input type="submit"  class="btn btn-sm btn-info" value="Cart">
+                                <input type="text" class="form-control d-inline" name="qty_input" style="width:80px;">
+                                <input type="submit"  class="btn btn-sm btn-info add-btn" value="Cart">
                             </form>
 
                         </td>
@@ -53,36 +56,7 @@
                     </tbody>
                 </table>
         </div>
-        <div class="col-lg-3">
-            <table class="table table-hover">
-                    <thead class="thead-dark">
-                    <tr>
 
-
-                        <th scope="col">Product_Name</th>
-
-                        <th scope="col">Sale_Price</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Amount</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-
-                    <tr>
-                        <th scope="row">1</th>
-
-                        <td>2</td>
-
-                        <td>3</td>
-                        <td>5</td>
-
-                    </tr>
-
-
-                    </tbody>
-                </table>
-        </div>
     </div>
 </div>
 

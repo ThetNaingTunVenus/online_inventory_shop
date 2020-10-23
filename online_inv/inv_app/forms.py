@@ -12,3 +12,4 @@ class CreateProduct(forms.ModelForm):
             'sale_price': forms.TextInput(attrs={'class': 'form-control'}),
 
         }
+

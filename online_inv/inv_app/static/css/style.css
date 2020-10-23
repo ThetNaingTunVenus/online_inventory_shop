@@ -1,0 +1,12 @@
+
+
+#cart-total{
+    display:block;
+    color : #fff;
+    text-align: center;
+    background-color: red;
+    width:20px;
+    height :25px;
+    font-size:14px;
+    border-radius:50%;
+}

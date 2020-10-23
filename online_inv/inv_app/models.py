@@ -14,7 +14,9 @@ class Product(models.Model):
     purchase_price = models.IntegerField(default=0)
     sale_price = models.IntegerField(default=0)
     stock_qty = models.IntegerField(default=0)
+    oreder_qty = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
+
 
     
 

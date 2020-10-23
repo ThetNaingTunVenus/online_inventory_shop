@@ -4,6 +4,12 @@ from .models import Product
 
 
 # Create your views here.
+
+def cart(request):
+    context = {}
+    return render(request, 'cart.html', context)
+
+
 def index(request):
     fm = CreateProduct(request.POST or None)
     products = Product.objects.all()
